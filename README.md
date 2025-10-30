@@ -36,29 +36,30 @@ xHumanoid is an advanced AI-driven cryptocurrency trading platform that leverage
 - API keys for AI model providers (Claude, OpenAI, etc.)
 - Aster API credentials
 - HTTPS-enabled domain
+```bash
 
-Clone repository
+#Clone repository
 git clone https://github.com/yourusername/xhumanoid.git
 
-Configure database
+#Configure database
 mysql -u root -p < database/schema.sql
 
-Set up configuration
+#Set up configuration
 cp data/config.example.php data/config.php
 
-Edit configuration file with your API keys
+#Edit configuration file with your API keys
 nano data/config.php
 
-Set permissions
+#Set permissions
 chmod 755 aiagent/
 chmod 644 data/config.php
-
+```
 
 
 ### Configuration
 
 Edit `data/config.php` with your settings:
-
+```php
 return [
 'site_enabled' => true,
 'github_link' => 'https://github.com/yourusername/xhumanoid',
@@ -73,11 +74,11 @@ return [
 'max_position_exposure' => 0.65, // 65%
 'update_interval' => 30, // seconds
 ];
-
+```
 
 
 ### Running the System
-
+```bash
 Start the trading bot
 php aiagent/trading_bot.php
 
@@ -86,7 +87,7 @@ nohup php aiagent/trading_bot.php > logs/bot.log 2>&1 &
 
 Monitor logs
 tail -f logs/bot.log
-
+```
 
 
 ### API Reference
@@ -110,7 +111,7 @@ All requests require an API key:
 - GET /api/history: Get trading history.
 
 #### Example: Python
-
+```python
 import requests
 
 def get_positions():
@@ -127,7 +128,7 @@ print(f"P&L: {position['pnl_percentage']}%")
 print("---")
 
 get_positions()
-
+```
 
 
 ### Support & Resources
